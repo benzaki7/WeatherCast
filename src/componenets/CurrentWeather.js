@@ -24,7 +24,6 @@ const CurrentWeather = ({ weather, unit }) => {
                 <p>Wind<br /> {unit === "metric" ? <p>{Math.round(weather.wind.speed * 3.6)} km/h</p> : <p>{Math.round(weather.wind.speed)} mph</p>}</p>
                 <p>Visibility<br /> {weather.visibility / 1000} Km/h</p>
             </div>
-
         </div>
     )
 }

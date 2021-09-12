@@ -4,15 +4,15 @@ import { FaSearch } from 'react-icons/fa';
 import CurrentWeather from './CurrentWeather';
 import HourlyWeather from "./HourlyWeather";
 import { FaCircleNotch } from 'react-icons/fa';
+require('dotenv').config();
 
 const Weather = ({ geolocation }) => {
-
     const [city, setCity] = useState('')
     const [query, setQuery] = useState('')
     const [searchDebounce, setSearchDebounce] = useState('');
     const [unit, setUnit] = useState('metric')
-    const [active, setActive] = useState(false)
-    const [open, setOpen] = useState(false)
+    // const [active, setActive] = useState(false)
+    // const [open, setOpen] = useState(false)
     let defaultCity = geolocation.district;
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Weather = ({ geolocation }) => {
         setQuery('')
     }
 
-    const API_KEY = "4ac229cac94288229023b5f5d7b97cd5"
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
     const CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${API_KEY}`
     const HOURLY_WEATHER_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&cnt=6&appid=${API_KEY}`
     

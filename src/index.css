@@ -155,6 +155,7 @@ background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
 }
 
 .con h3 {
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -226,11 +227,30 @@ to{
 }
 
 @media screen and (max-width: 483px) {
+  .form input {
+    width: 50vw;
+  }
   .section-1 p {
     display: none;
   }
-
-
-
-
+  .section-2  {
+    justify-content: space-between;
+  }
+  .section-2 p {
+    font-size: .8rem;
+  }
+  .con {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    margin: 10px;
+    padding: 5px;
+  }
 }

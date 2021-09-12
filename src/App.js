@@ -1,10 +1,10 @@
 import { useFetch } from './componenets/Hooks'
 import Weather from './componenets/Weather';
 import { FaCircleNotch } from 'react-icons/fa';
+require('dotenv').config();
 
 function App() {
-
-  const API_KEY = "59c79271fde845da96028370941e6b69"
+  const API_KEY = process.env.REACT_APP_GEOLOCATION_API_KEY
   const GEOLOCATION_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}`
 
   // Get Ip Geolocation
