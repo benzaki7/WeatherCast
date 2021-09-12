@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useFetch } from './componenets/Hooks'
+import Weather from './componenets/Weather';
+import { FaCircleNotch } from 'react-icons/fa';
 
 function App() {
+
+  const API_KEY = "59c79271fde845da96028370941e6b69"
+  const GEOLOCATION_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}`
+
+  // Get Ip Geolocation
+  const {data: geolocation, isLoading, error} = useFetch(GEOLOCATION_URL)
+  console.log(geolocation);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {error && <div className='error'>{error}</div>}
+      {isLoading && <FaCircleNotch className='spinner'/> }
+      {geolocation && <Weather geolocation={geolocation} />}
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
