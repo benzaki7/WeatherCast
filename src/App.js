@@ -9,8 +9,6 @@ function App() {
 
   // Get Ip Geolocation
   const {data: geolocation, isLoading, error} = useFetch(GEOLOCATION_URL)
-  console.log(geolocation);
-
 
   return (
     <div className="container">

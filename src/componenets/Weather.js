@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useFetch } from './Hooks'
-import { FaSearch } from 'react-icons/fa';
 import CurrentWeather from './CurrentWeather';
 import HourlyWeather from "./HourlyWeather";
-import { FaCircleNotch } from 'react-icons/fa';
 import Footer from "./Footer";
+import { FaSearch } from 'react-icons/fa';
+import { FaCircleNotch } from 'react-icons/fa';
 require('dotenv').config();
 
 const Weather = ({ geolocation }) => {
@@ -37,10 +37,7 @@ const Weather = ({ geolocation }) => {
 
     // Get weather data
     const { data: currentWeather, isLoading } = useFetch(CURRENT_WEATHER_URL)
-    console.log(currentWeather);
-
     const { data: hourlyWeather } = useFetch(HOURLY_WEATHER_URL)
-    console.log(hourlyWeather);
 
 
     return (
