@@ -13,8 +13,7 @@ const Weather = ({ geolocation }) => {
     const [searchDebounce, setSearchDebounce] = useState('');
     const [unit, setUnit] = useState('metric')
 
-    let defaultCity = geolocation.district;
-
+    let defaultCity = geolocation.city;
     useEffect(() => {
         if (searchDebounce) {
             setCity(searchDebounce)
@@ -38,7 +37,6 @@ const Weather = ({ geolocation }) => {
     // Get weather data
     const { data: currentWeather, isLoading } = useFetch(CURRENT_WEATHER_URL)
     const { data: hourlyWeather } = useFetch(HOURLY_WEATHER_URL)
-
 
     return (
         <div>
